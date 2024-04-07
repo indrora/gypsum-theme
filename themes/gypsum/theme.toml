@@ -1,0 +1,19 @@
+name = 'Gypsum'
+license = 'MIT'
+licenselink = 'https://github.com/indrora/hugo-gypsum/LICENSE'
+description = 'A malleable theme inspired by Alabaster'
+version = "0.1"
+
+
+# The home page of the theme, where the source can be found
+homepage = 'https://github.com/indrora/hugo-gypsum'
+
+
+# Taxonomy terms
+tags = ['docs', 'minimal']
+features = ['some', 'awesome', 'features']
+
+# If the theme has a single author
+[author]
+  name = 'Morgan "indrora" Gangwere'
+  homepage = 'https://github.com/indrora'

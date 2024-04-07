@@ -1,0 +1,30 @@
+<h1>
+    <a href="{{ .Site.Home.RelPermalink }}">{{ site.Title }}</a>
+</h1>
+
+{{- define "partials/inline/sidebar/navitem" }}
+<li class="navitem"><a href="#{{.ID}}">{{.Title}}</a>
+    {{- if .Headings -}}
+    <ul class="navlist">
+        {{range .Headings}}{{partial "inline/sidebar/navitem" .}}{{ end }}
+    </ul>
+    {{- end -}}
+</li>
+{{- end -}}
+
+<h2>Navigation</h2>
+{{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+
+<ul class="navlist">
+    {{ range site.RegularPages }}
+    <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+    {{ end }}
+</ul>
+{{- with .Fragments.Headings -}}
+<h2>Contents</h2>
+<ul class="navlist">
+    {{range . }}
+    {{partial "inline/sidebar/navitem" . }}
+    {{ end }}
+    {{- end -}}
+</ul>
